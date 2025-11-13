@@ -3,9 +3,26 @@ const express = require('express');
 const app = express();
 const mongodb = require('./data/database');
 const route = require('./routes');
+const bodyParser = require("body-parser")
+
 
 // 2 We call the port to view the page
 const port = process.env.PORT || 3000;
+
+
+// Body Parser
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use((req, res, next) => {
+  res.setHeader('Access-control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Orgin, x-Requested-with, Content-Type Accept, z-key'
+  );
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  next();
+})
 
 // We make use of required routes
 app.use('/', route);
