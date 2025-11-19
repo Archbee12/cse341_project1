@@ -3,28 +3,31 @@
 http://localhost:3000/contacts
 
 ### Get contact by id
-http://localhost:3000/contacts/69160bf586a1a50cb5be9146
+http://localhost:3000/contacts/690968656ade90d13ae32fdf
 
 ### Create contact
 POST http://localhost:3000/contacts
 content-type: application/json
 
 {
-  "firstName": "Felix Mba",
-  "lastName": "Justica",
-  "email": "felix@example.com",
-  "favoriteColor": "Yellow",
-  "birthday": "1994-07-22"
+  "firstName": "Promise",
+  "lastName": "Base",
+  "email": "base@example.com",
+  "favoriteColor": "Green",
+  "birthday": "1984-07-22"
 }
 
 ### Put contact
-PUT http://localhost:3000/contacts/69160bf586a1a50cb5be9146 HTTP/1.1 
+PUT http://localhost:3000/contacts/69182f4a702f435bcaded411 HTTP/1.1 
 content-type: application/json
 
 {
-  "username": "archbee",
-  "email": "marckdonald",
-  "name": "White",
+  "username": "promiseba",
+  "email": "promise@example.com",
+  "name": "Promise",
   "ipaddress": "193.222.39"
 }
+
+###Delete contact
+DELETE http://localhost:3000/contacts/690968656ade90d13ae32fdf HTTP/1.1 
 
